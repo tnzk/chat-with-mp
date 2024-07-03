@@ -7,6 +7,7 @@ import os
 from openai import OpenAI
 import itertools
 import redis
+import urllib.parse
 
 TWFY_API_KEY = os.environ.get("THEY_WORK_FOR_YOU_API_KEY")
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
@@ -113,7 +114,7 @@ def search_mp(request):
 
 def chat_with(request, mp_name):
     template = loader.get_template("chat/chat_with.html")
-    context = {"mp_name": mp_name}
+    context = {"mp_name": urllib.parse.unquote(mp_name)}
     return HttpResponse(template.render(context, request))
 
 
@@ -126,7 +127,7 @@ def message(request, mp_name):
     else:
         recovered_history = []
     new_message = request.POST.get("new_message")
-    speech = get_profile(mp_name, jurisdiction)
+    speech = get_profile(urllib.parse.unquote(mp_name), jurisdiction)
 
     history = recovered_history + [
         {
