@@ -6,19 +6,27 @@ import json
 import os
 from openai import OpenAI
 import itertools
+import redis
 
 TWFY_API_KEY = os.environ.get("THEY_WORK_FOR_YOU_API_KEY")
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 profile = {}
 
+redis_cli = redis.Redis(host=os.environ.get("REDIS_HOST"),
+            username="default",
+            ssl=True,
+            password=os.environ.get("REDIS_PASSWORD"))
 
 def system_prompt(name, speech, jurisdiction):
     template = os.environ.get("PROMPT_GB" if jurisdiction == "GB" else "PROMPT_JP")
     return template.replace("{speech}", "\n".join(speech)).replace("{name}", name)
 
 def get_profile(mp_name, jurisdiction):
-    speech = profile.get(mp_name)
+    redis_key = f"{jurisdiction}:{mp_name}"
+    speech = redis_cli.get(redis_key)
+    if speech:
+        speech = json.loads(speech)
 
     if not speech:
         if jurisdiction == 'JP':
@@ -26,7 +34,7 @@ def get_profile(mp_name, jurisdiction):
             response = requests.get(url)
             data = response.json()
             speech = list(map(lambda rec: rec["speech"], data["speechRecord"]))
-            profile[mp_name] = speech
+            redis_cli.set(redis_key, json.dumps(speech))
         if jurisdiction == 'GB':
             url = f"https://members-api.parliament.uk/api/Members/Search?Name={mp_name}&skip=0&take=20"
             response = requests.get(url)
@@ -55,9 +63,9 @@ def get_profile(mp_name, jurisdiction):
             westminsterhall = map(lambda row: row["extract"], data["rows"])
 
             speech = list(itertools.chain(commons, lords, westminsterhall))
-            profile[mp_name] = speech
+            redis_cli.set(redis_key, json.dumps(speech))
     else:
-        # print("catch hit")
+        print("catch hit")
         pass
     return speech
 

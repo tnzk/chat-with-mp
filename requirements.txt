@@ -3,3 +3,5 @@ requests
 openai
 python-dotenv
 dj_database_url
+redis
+psycopg2
