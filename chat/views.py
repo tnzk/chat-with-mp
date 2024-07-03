@@ -24,7 +24,7 @@ def system_prompt(name, speech, jurisdiction):
     return template.replace("{speech}", "\n".join(speech)).replace("{name}", name)
 
 def get_profile(mp_name, jurisdiction):
-    redis_key = f"{jurisdiction}:{mp_name}"
+    redis_key = f"{jurisdiction}:{mp_name}".encode('utf-8')
     speech = redis_cli.get(redis_key)
     if speech:
         speech = json.loads(speech)
@@ -32,6 +32,7 @@ def get_profile(mp_name, jurisdiction):
     if not speech:
         if jurisdiction == 'JP':
             url = f"https://kokkai.ndl.go.jp/api/speech?speaker={mp_name}&recordPacking=json"
+            print(url)
             response = requests.get(url)
             data = response.json()
             speech = list(map(lambda rec: rec["speech"], data["speechRecord"]))
@@ -127,7 +128,8 @@ def message(request, mp_name):
     else:
         recovered_history = []
     new_message = request.POST.get("new_message")
-    speech = get_profile(urllib.parse.unquote(mp_name), jurisdiction)
+    unquoted_mp_name = urllib.parse.unquote(mp_name)
+    speech = get_profile(unquoted_mp_name, jurisdiction)
 
     history = recovered_history + [
         {
@@ -138,7 +140,7 @@ def message(request, mp_name):
     messages = [
         {
             "role": "system",
-            "content": system_prompt(mp_name, speech, jurisdiction),
+            "content": system_prompt(unquoted_mp_name, speech, jurisdiction),
         },
     ] + history
     stream = client.chat.completions.create(
@@ -160,7 +162,7 @@ def message(request, mp_name):
         },
     ]
     context = {
-        "mp_name": mp_name,
+        "mp_name": unquoted_mp_name,
         "response": buf,
         "new_message": new_message,
         "history": history,
