@@ -1,0 +1,13 @@
+{% for message in history %}
+  <div class="chat {% if message.role == "user" %}chat-end{% else %} chat-start {% endif %}">
+    <div class="chat-header">
+      {% if message.role == "user" %}You{% else %}{{ mp_name }}{% endif %}
+      <!--<time class="text-xs opacity-50">2 hours ago</time>-->
+    </div>
+    <div class="chat-bubble text-gray-700 {% if message.role == "user" %}bg-green-200{% else %}bg-gray-200{% endif%}">
+      {{ message.content }}
+    </div>
+    <!--<div class="chat-footer opacity-50">Seen</div>-->
+  </div>
+{% endfor %}
+<input type="hidden" name="history_json" value="{{ history_json }}" />
