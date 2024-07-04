@@ -18,7 +18,7 @@ profile = {}
 
 redis_cli = redis.Redis(host=os.environ.get("REDIS_HOST"),
             username="default",
-            ssl=True,
+            ssl=False if os.environ.get("REDIS_NO_SSL") else True,
             password=os.environ.get("REDIS_PASSWORD"))
 
 def system_prompt(name, speech, jurisdiction):

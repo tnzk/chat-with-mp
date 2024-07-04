@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
-    '.vercel.app'
+    '.vercel.app',
+    'chat-with-mp.fly.dev'
 ]
 
 
