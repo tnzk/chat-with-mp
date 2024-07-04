@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-04 13:50+0900\n"
+"POT-Creation-Date: 2024-07-04 15:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,87 @@ msgstr ""
 
 #: chat/templates/base_generic.html:39
 msgid "Chat with MP"
+msgstr ""
+
+#: chat/templates/chat/about.html:4
+msgid "About this site"
+msgstr ""
+
+#: chat/templates/chat/about.html:8
+msgid ""
+"\n"
+"    <em>Chat with MP</em> is a hobby project exploring the potential of "
+"large\n"
+"    language models to raise political awareness. It allows people to "
+"engage\n"
+"    with virtual representations of members of parliament, created using\n"
+"    publicly available open data. "
+msgstr ""
+
+#: chat/templates/chat/about.html:16
+msgid ""
+" While all features are free to use, some of the data\n"
+"    sources and APIs require fees. If you find this project interesting, we\n"
+"    welcome your support through Patreon or Ethereum donations.\n"
+"    "
+msgstr ""
+
+#: chat/templates/chat/about.html:40
+msgid "Data sources"
+msgstr ""
+
+#: chat/templates/chat/about.html:43
+msgid ""
+"\n"
+"    <div class=\"my-3\">For Japanese National Diet:</div>\n"
+"    <ul class=\"list-disc list-inside\">\n"
+"      <li>\n"
+"        <a\n"
+"          class=\"text-lime-500 hover:text-lime-600\"\n"
+"          href=\"https://kokkai.ndl.go.jp/#/\"\n"
+"          target=\"_blank\"\n"
+"          >国会会議録検索システム</a\n"
+"        >\n"
+"      </li>\n"
+"      <li>\n"
+"        <a\n"
+"          class=\"text-lime-500 hover:text-lime-600\"\n"
+"          href=\"https://kokkai.sugawarataku.net/\"\n"
+"          target=\"_blank\"\n"
+"          >国会議員白書</a\n"
+"        >\n"
+"      </li>\n"
+"    </ul>\n"
+"\n"
+"    <div class=\"my-3\">For UK Parliament:</div>\n"
+"    <ul class=\"list-disc list-inside\">\n"
+"      <li>\n"
+"        <a\n"
+"          class=\"text-lime-500 hover:text-lime-600\"\n"
+"          href=\"https://developer.parliament.uk/\"\n"
+"          target=\"_blank\"\n"
+"          >UK Parliament Developer hub</a\n"
+"        >\n"
+"      </li>\n"
+"      <li>\n"
+"        <a\n"
+"          class=\"text-lime-500 hover:text-lime-600\"\n"
+"          href=\"https://api.parliament.uk/historic-hansard/index.html\"\n"
+"          target=\"_blank\"\n"
+"          >Histroc Hansard Data</a\n"
+"        >\n"
+"      </li>\n"
+"      <li>\n"
+"        <a\n"
+"          class=\"text-lime-500 hover:text-lime-600\"\n"
+"          href=\"https://www.theyworkforyou.com/\"\n"
+"          target=\"_blank\"\n"
+"          >They Work For You API</a\n"
+"        >\n"
+"      </li>\n"
+"    </ul>\n"
+"\n"
+"    "
 msgstr ""
 
 #: chat/templates/chat/chat_with.html:35
@@ -36,7 +117,7 @@ msgstr ""
 msgid "E.g. Please tell us about the policies you worked on during your term."
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:91
+#: chat/templates/chat/chat_with.html:92
 #, python-format
 msgid ""
 "You are not talking to an actual human; it is an AI model trained with past "
@@ -49,10 +130,10 @@ msgstr ""
 msgid "Recent MPs"
 msgstr ""
 
-#: chat/templates/chat/index.html:17
+#: chat/templates/chat/index.html:22
 msgid "Find MP"
 msgstr ""
 
-#: chat/templates/chat/index.html:24
+#: chat/templates/chat/index.html:29
 msgid "Type part of the name of MP..."
 msgstr ""

@@ -1,0 +1,95 @@
+{% extends "base_generic.html" %} {% load i18n %} {% block content %}
+<div class="mx-auto max-w-screen-xl px-4 py-1 sm:px-6 sm:py-2 lg:px-8">
+  <h2 class="text-xl font-bold text-gray-900 sm:text-2xl py-2">
+    {% trans 'About this site' %}
+  </h2>
+
+  <div class="my-2">
+    {% blocktrans %}
+    <em>Chat with MP</em> is a hobby project exploring the potential of large
+    language models to raise political awareness. It allows people to engage
+    with virtual representations of members of parliament, created using
+    publicly available open data. {% endblocktrans %}
+  </div>
+
+  <div class="my-2">
+    {% blocktrans %} While all features are free to use, some of the data
+    sources and APIs require fees. If you find this project interesting, we
+    welcome your support through Patreon or Ethereum donations.
+    {% endblocktrans %}
+  </div>
+
+  <div>
+    Patreon:
+    <a
+      href="https://www.patreon.com/bePatron?u=17402067"
+      data-patreon-widget-type="become-patron-button"
+      >Become a member!</a
+    >
+    <script
+      async
+      src="https://c6.patreon.com/becomePatronButton.bundle.js"
+    ></script>
+  </div>
+  <div>
+    Ethereum:
+    <code class="font-mono">0xCAfdD9997a724687EbDB0AC7F15d8c8e6bc192F4</code>
+  </div>
+
+  <h3 class="mt-8 text-lg font-bold text-gray-900 sm:text-xl py-2">
+    {% trans 'Data sources' %}
+  </h3>
+  <div class="my-2">
+    {% blocktrans %}
+    <div class="my-3">For Japanese National Diet:</div>
+    <ul class="list-disc list-inside">
+      <li>
+        <a
+          class="text-lime-500 hover:text-lime-600"
+          href="https://kokkai.ndl.go.jp/#/"
+          target="_blank"
+          >国会会議録検索システム</a
+        >
+      </li>
+      <li>
+        <a
+          class="text-lime-500 hover:text-lime-600"
+          href="https://kokkai.sugawarataku.net/"
+          target="_blank"
+          >国会議員白書</a
+        >
+      </li>
+    </ul>
+
+    <div class="my-3">For UK Parliament:</div>
+    <ul class="list-disc list-inside">
+      <li>
+        <a
+          class="text-lime-500 hover:text-lime-600"
+          href="https://developer.parliament.uk/"
+          target="_blank"
+          >UK Parliament Developer hub</a
+        >
+      </li>
+      <li>
+        <a
+          class="text-lime-500 hover:text-lime-600"
+          href="https://api.parliament.uk/historic-hansard/index.html"
+          target="_blank"
+          >Histroc Hansard Data</a
+        >
+      </li>
+      <li>
+        <a
+          class="text-lime-500 hover:text-lime-600"
+          href="https://www.theyworkforyou.com/"
+          target="_blank"
+          >They Work For You API</a
+        >
+      </li>
+    </ul>
+
+    {% endblocktrans %}
+  </div>
+</div>
+{% endblock %}

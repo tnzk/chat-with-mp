@@ -7,5 +7,6 @@ urlpatterns = [
   path("search-mp", views.search_mp, name="search_mp"),
   path("chat-with/<mp_name>", views.chat_with, name="chat_with"),
   path("chat-with/<mp_name>/message", views.message, name="chat_with"),
+  path("about", views.about, name="about"),
 ]
 

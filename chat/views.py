@@ -9,6 +9,7 @@ from openai import OpenAI
 import itertools
 import redis
 import urllib.parse
+import datetime
 
 TWFY_API_KEY = os.environ.get("THEY_WORK_FOR_YOU_API_KEY")
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
@@ -25,6 +26,7 @@ def system_prompt(name, speech, jurisdiction):
     return template.replace("{speech}", "\n".join(speech)).replace("{name}", name)
 
 def get_profile(mp_name, jurisdiction):
+    quoted_mp_name = urllib.parse.quote(mp_name)
     redis_key = f"{jurisdiction}:{mp_name}".encode('utf-8')
     speech = redis_cli.get(redis_key)
     if speech:
@@ -32,35 +34,42 @@ def get_profile(mp_name, jurisdiction):
 
     if not speech:
         if jurisdiction == 'JP':
-            url = f"https://kokkai.ndl.go.jp/api/speech?speaker={mp_name}&recordPacking=json"
+            url = f"https://kokkai.ndl.go.jp/api/speech?speaker={quoted_mp_name}&recordPacking=json"
             print(url)
             response = requests.get(url)
             data = response.json()
             speech = list(map(lambda rec: rec["speech"], data["speechRecord"]))
             redis_cli.set(redis_key, json.dumps(speech))
         if jurisdiction == 'GB':
-            url = f"https://members-api.parliament.uk/api/Members/Search?Name={mp_name}&skip=0&take=20"
+            url = f"https://members-api.parliament.uk/api/Members/Search?Name={quoted_mp_name}&skip=0&take=20"
+            print(url)
             response = requests.get(url)
             data = response.json()
             start_date = data["items"][0]["value"]["latestHouseMembership"]["membershipStartDate"][0:10]
+            date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+            safe_date = (date + datetime.timedelta(days = 5)).date().isoformat()
 
-            url = f"https://www.theyworkforyou.com/api/getMPs?date={start_date}&search={mp_name}&output=json&key={TWFY_API_KEY}"
+            url = f"https://www.theyworkforyou.com/api/getMPs?date={safe_date}&search={quoted_mp_name}&output=json&key={TWFY_API_KEY}"
+            print(url)
             response = requests.get(url)
             data = response.json()
             mp = list(filter(lambda d: mp_name in d["name"], data))[0]
             person_id = mp["person_id"]
 
             url = f"https://www.theyworkforyou.com/api/getDebates?person={person_id}&type=commons&output=json&key={TWFY_API_KEY}"
+            print(url)
             response = requests.get(url)
             data = response.json()
             commons = map(lambda row: row["extract"], data["rows"])
 
             url = f"https://www.theyworkforyou.com/api/getDebates?person={person_id}&type=lords&output=json&key={TWFY_API_KEY}"
+            print(url)
             response = requests.get(url)
             data = response.json()
             lords = map(lambda row: row["extract"], data["rows"])
 
             url = f"https://www.theyworkforyou.com/api/getDebates?person={person_id}&type=westminsterhall&output=json&key={TWFY_API_KEY}"
+            print(url)
             response = requests.get(url)
             data = response.json()
             westminsterhall = map(lambda row: row["extract"], data["rows"])
@@ -104,16 +113,18 @@ def index(request):
     context = { 'jurisdiction': jurisdiction, 'recent': recent_mps }
 
     template = loader.get_template("chat/index.html")
-    resp = HttpResponse(template.render(context, request))
-
     jurisdiction_locale_map = { 'JP': 'ja', 'GB': 'en' }
     if prefered_jurisdiction:
-      resp.set_cookie('jurisdiction', prefered_jurisdiction)
       prefered_locale = jurisdiction_locale_map.get(prefered_jurisdiction)
       if prefered_locale:
-        print('setting', prefered_locale, get_language())
-        resp.set_cookie('django_language', prefered_locale)
         activate(prefered_locale)
+
+    resp = HttpResponse(template.render(context, request))
+
+    if prefered_jurisdiction:
+      resp.set_cookie('jurisdiction', prefered_jurisdiction)
+      if prefered_locale:
+        resp.set_cookie('django_language', prefered_locale)
     return resp
 
 
@@ -188,4 +199,9 @@ def message(request, mp_name):
         "history": history,
         "history_json": json.dumps(history),
     }
+    return HttpResponse(template.render(context, request))
+
+def about(request):
+    template = loader.get_template("chat/about.html")
+    context = {}
     return HttpResponse(template.render(context, request))

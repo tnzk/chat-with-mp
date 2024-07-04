@@ -9,6 +9,11 @@
     {% for mp in recent %}
       <div class="gap-y-4">
         <a href="/chat-with/{{ mp | urlencode }}" class="py-1 flex items-center gap-x-2 hover:bg-gray-100 rounded-lg">
+          <div class="avatar">
+            <div class="rounded-full w-10 h-10">
+              <img src="https://ui-avatars.com/api/?name={{ mp | urlencode }}">
+            </div>
+          </div>
           <div>{{ mp }}</div>
         </a>
       </div>
