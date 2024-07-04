@@ -1,5 +1,15 @@
 {% extends "base_generic.html" %} {% block content %}
 <div class="mx-auto max-w-screen-xl px-4 py-1 sm:px-6 sm:py-2 lg:px-8">
+  <h2 class="text-xl font-bold text-gray-900 sm:text-2xl py-2">Recent MPs</h2>
+  <div>
+    {% for mp in recent %}
+      <div class="gap-y-4">
+        <a href="/chat-with/{{ mp | urlencode }}" class="py-1 flex items-center gap-x-2 hover:bg-gray-100 rounded-lg">
+          <div>{{ mp }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
   <h2 class="text-xl font-bold text-gray-900 sm:text-2xl py-2">Find MP</h2>
   <div>
     <label class="input input-bordered flex items-center gap-2">

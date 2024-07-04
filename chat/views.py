@@ -88,12 +88,25 @@ def search_mp_gb(name):
 # Helpers above
 
 def index(request):
-    template = loader.get_template("chat/index.html")
-    resp = HttpResponse(template.render({}, request))
+    prefered_jurisdiction = request.GET.get('cc')
 
-    jurisdiction = request.GET.get('cc')
-    if jurisdiction:
-        resp.set_cookie('jurisdiction', jurisdiction)
+    if prefered_jurisdiction:
+        jurisdiction = prefered_jurisdiction
+    elif request.COOKIES.get('jurisdiction'):
+        jurisdiction = request.COOKIES.get('jurisdiction')
+    else:
+        jurisdiction = "JP"
+
+    cached_keys = redis_cli.keys(f"{jurisdiction}:*")
+    recent_mps = list(map(lambda b: b.decode('utf-8')[3:], cached_keys))
+
+    context = { 'jurisdiction': jurisdiction, 'recent': recent_mps }
+
+    template = loader.get_template("chat/index.html")
+    resp = HttpResponse(template.render(context, request))
+    print(jurisdiction)
+    if prefered_jurisdiction:
+      resp.set_cookie('jurisdiction', prefered_jurisdiction)
     return resp
 
 
