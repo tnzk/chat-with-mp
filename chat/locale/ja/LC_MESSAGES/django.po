@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 13:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: chat/templates/base_generic.html:39
+msgid "Chat with MP"
+msgstr "Chat with 国会議員"
+
+#: chat/templates/chat/chat_with.html:35
+#, python-format
+msgid "%(mp_name)s MP (AI) is ready! Ask anything to start conversation"
+msgstr "%(mp_name)s議員は準備OKです！　何か質問して会話を始めましょう。"
+
+#: chat/templates/chat/chat_with.html:45
+#, fuzzy, python-format
+#| msgid "%%(name) is typing..."
+msgid "%(name)s is typing..."
+msgstr "%(name)sが入力中..."
+
+#: chat/templates/chat/chat_with.html:68
+msgid "E.g. Please tell us about the policies you worked on during your term."
+msgstr "例）任期中にあなたが尽力した政策について教えてください。"
+
+#: chat/templates/chat/chat_with.html:91
+#, python-format
+msgid ""
+"You are not talking to an actual human; it is an AI model trained with past "
+"speeches by %(mp_name)s MP. We are not affiliated, associated, authorized, "
+"endorsed by, or in any way officially connected with %(mp_name)s, or any of "
+"its subsidiaries or its affiliates"
+msgstr ""
+"あなたが話しているのは実際の人間ではなく、%(mp_name)s議員の過去の発言で訓練さ"
+"れたAIモデルです。私たちは%(mp_name)s議員およびその関連団体等とは、一切の提"
+"携、協力、認可、支持、その他公式な関係はありません。"
+
+#: chat/templates/chat/index.html:7
+msgid "Recent MPs"
+msgstr "最近の国会議員"
+
+#: chat/templates/chat/index.html:17
+msgid "Find MP"
+msgstr "国会議員を探す"
+
+#: chat/templates/chat/index.html:24
+msgid "Type part of the name of MP..."
+msgstr "国会議員の名前の一部で検索..."
+
+#~ msgid "Say something..."
+#~ msgstr "例）任期中にあなたが尽力した政策について教えてください。"

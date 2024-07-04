@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -34,7 +36,7 @@
         <div class="text-center sm:text-left">
           <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
             <a href="/">
-              Chat with MP
+              {% trans 'Chat with MP' %}
               <span class="text-lg">
                 {% if jurisdiction == 'JP' %}
                   🇯🇵

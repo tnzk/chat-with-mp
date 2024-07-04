@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 13:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: chat/templates/base_generic.html:39
+msgid "Chat with MP"
+msgstr ""
+
+#: chat/templates/chat/chat_with.html:35
+#, python-format
+msgid "%(mp_name)s MP (AI) is ready! Ask anything to start conversation"
+msgstr ""
+
+#: chat/templates/chat/chat_with.html:45
+#, python-format
+msgid "%(name)s is typing..."
+msgstr ""
+
+#: chat/templates/chat/chat_with.html:68
+msgid "E.g. Please tell us about the policies you worked on during your term."
+msgstr ""
+
+#: chat/templates/chat/chat_with.html:91
+#, python-format
+msgid ""
+"You are not talking to an actual human; it is an AI model trained with past "
+"speeches by %(mp_name)s MP. We are not affiliated, associated, authorized, "
+"endorsed by, or in any way officially connected with %(mp_name)s, or any of "
+"its subsidiaries or its affiliates"
+msgstr ""
+
+#: chat/templates/chat/index.html:7
+msgid "Recent MPs"
+msgstr ""
+
+#: chat/templates/chat/index.html:17
+msgid "Find MP"
+msgstr ""
+
+#: chat/templates/chat/index.html:24
+msgid "Type part of the name of MP..."
+msgstr ""

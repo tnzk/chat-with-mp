@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.utils.translation import activate, get_language
 import requests
 import json
 import os
@@ -104,9 +105,15 @@ def index(request):
 
     template = loader.get_template("chat/index.html")
     resp = HttpResponse(template.render(context, request))
-    print(jurisdiction)
+
+    jurisdiction_locale_map = { 'JP': 'ja', 'GB': 'en' }
     if prefered_jurisdiction:
       resp.set_cookie('jurisdiction', prefered_jurisdiction)
+      prefered_locale = jurisdiction_locale_map.get(prefered_jurisdiction)
+      if prefered_locale:
+        print('setting', prefered_locale, get_language())
+        resp.set_cookie('django_language', prefered_locale)
+        activate(prefered_locale)
     return resp
 
 

@@ -1,4 +1,6 @@
-{% extends "base_generic.html" %} {% block content %}
+{% extends "base_generic.html" %}
+{% load i18n %}
+{% block content %}
 <script>
   function showLatestMessage(event) {
     const data = new FormData(event.target);
@@ -30,7 +32,7 @@
             <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
           </svg>
           <div class="text-gray-500 text-md mt-4">
-            {{ mp_name }} MP (AI) is ready! Ask anything to start conversation
+            {% blocktrans %}{{ mp_name }} MP (AI) is ready! Ask anything to start conversation{% endblocktrans %}
           </div>
         </div>
       </div>
@@ -39,7 +41,9 @@
       <div>
         <span class="loading loading-dots loading-sm"></span>
       </div>
-      <div>{{ mp_name }} is typing...</div>
+      <div>
+        {% blocktrans %}{{ name }} is typing...{% endblocktrans %}
+      </div>
     </div>
   </div>
 
@@ -61,7 +65,7 @@
           class="grow px-4"
           id="new_message"
           name="new_message"
-          placeholder="Say something"
+          placeholder="{% trans 'E.g. Please tell us about the policies you worked on during your term.' %}"
         />
         <button class="block pr-4" type="submit" class="">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
@@ -84,7 +88,7 @@
         stroke-width="2"
         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
     </svg>
-    <span>Warning: you are talking to an AI model trained with past speeches by {{ mp_name }} MP. Nothing is his/her actual </span>
+    <span>{%blocktrans%}You are not talking to an actual human; it is an AI model trained with past speeches by {{ mp_name }} MP. We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with {{ mp_name }}, or any of its subsidiaries or its affiliates{% endblocktrans %}</span>
   </div>
 </div>
 
