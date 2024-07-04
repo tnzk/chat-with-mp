@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [
     'chat-with-mp.fly.dev'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://chat-with-mp.fly.dev']
+
 
 # Application definition
 
@@ -75,8 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chat_with_mp.wsgi.app'
-
+WSGI_APPLICATION = 'chat_with_mp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

@@ -4,3 +4,4 @@ openai
 python-dotenv
 dj_database_url
 redis
+wsgi-basic-auth
