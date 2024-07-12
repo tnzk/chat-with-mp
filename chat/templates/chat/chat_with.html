@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
 <script>
-  function showLatestMessage(event) {
+  function showMessageInTransit(event) {
     const data = new FormData(event.target);
     const newMessage = data.get('new_message');
 
@@ -47,13 +47,15 @@
     </div>
   </div>
 
+  <!-- https://htmx.org/attributes/hx-on/ -->
   <form
     class="max-w-3xl mx-auto"
     hx-post="/chat-with/{{ mp_name }}/message"
     hx-target="#conversation"
     hx-include="#conversation > input"
     hx-indicator="#typing-indicator"
-    onsubmit="showLatestMessage(event)"
+    onsubmit="showMessageInTransit(event)"
+    hx-on--before-request="this.reset()"
     method="POST"
   >
     {% csrf_token %}
