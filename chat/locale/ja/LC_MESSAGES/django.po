@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-04 16:14+0900\n"
+"POT-Creation-Date: 2024-07-13 01:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Chat with MP"
 msgstr "Chat with 国会議員"
 
-#: chat/templates/base_generic.html:100
+#: chat/templates/base_generic.html:139
 msgid "About"
 msgstr "このサイトについて"
 
@@ -41,7 +41,7 @@ msgid ""
 "    publicly available open data. "
 msgstr ""
 "\n"
-"    <em>Chat with MP</em>は、公開データとLLMを政治参加の意識向上に活用する\n"
+"    <em>Chat with 国会議員</em>は、公開データとLLMを政治参加の意識向上に活用する\n"
 "    可能性を探るホビープロジェクトです。一般公開された国会議員のデータを使っ"
 "て    その国会議員を模した言動をするAIモデルを訓練し、国会議員との対話を擬似"
 "体験することが    できます、"
@@ -50,19 +50,17 @@ msgstr ""
 msgid ""
 " While all features are free to use, some of the data\n"
 "    sources and APIs require fees. If you find this project interesting, we\n"
-"    welcome your support through Patreon or Ethereum donations.\n"
-"    "
+"    welcome your support through Buy me a coffee. "
 msgstr ""
 " 本サービスは誰でも無料で使用できますが、実現に使っている一部のAPIやデータ"
 "ソースには 料金が必要なものもあります。もしこのプロジェクトがおもしろいと思っ"
-"て頂けたので あれば、ぜひ Patreon での支援や Ethereum での寄付をご検討くださ"
-"い。"
+"て頂けたので あれば、Buy me a Coffee での支援をご検討ください。"
 
-#: chat/templates/chat/about.html:40
+#: chat/templates/chat/about.html:31
 msgid "Data sources"
 msgstr "データソース"
 
-#: chat/templates/chat/about.html:43
+#: chat/templates/chat/about.html:34
 msgid ""
 "\n"
 "    <div class=\"my-3\">For Japanese National Diet:</div>\n"
@@ -127,11 +125,11 @@ msgstr "%(mp_name)s議員は準備OKです！何か質問して会話を始め�
 msgid "%(mp_name)s is typing..."
 msgstr "%(mp_name)sが入力中..."
 
-#: chat/templates/chat/chat_with.html:68
+#: chat/templates/chat/chat_with.html:69
 msgid "E.g. Please tell us about the policies you worked on during your term."
 msgstr "例）任期中にあなたが尽力した政策について教えてください。"
 
-#: chat/templates/chat/chat_with.html:92
+#: chat/templates/chat/chat_with.html:93
 #, python-format
 msgid ""
 "You are not talking to an actual human; it is an AI model trained with past "

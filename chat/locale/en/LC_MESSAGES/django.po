@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-04 16:14+0900\n"
+"POT-Creation-Date: 2024-07-13 01:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Chat with MP"
 msgstr ""
 
-#: chat/templates/base_generic.html:100
+#: chat/templates/base_generic.html:139
 msgid "About"
 msgstr ""
 
@@ -45,15 +45,14 @@ msgstr ""
 msgid ""
 " While all features are free to use, some of the data\n"
 "    sources and APIs require fees. If you find this project interesting, we\n"
-"    welcome your support through Patreon or Ethereum donations.\n"
-"    "
+"    welcome your support through Buy me a coffee. "
 msgstr ""
 
-#: chat/templates/chat/about.html:40
+#: chat/templates/chat/about.html:31
 msgid "Data sources"
 msgstr ""
 
-#: chat/templates/chat/about.html:43
+#: chat/templates/chat/about.html:34
 msgid ""
 "\n"
 "    <div class=\"my-3\">For Japanese National Diet:</div>\n"
@@ -117,11 +116,11 @@ msgstr ""
 msgid "%(mp_name)s is typing..."
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:68
+#: chat/templates/chat/chat_with.html:69
 msgid "E.g. Please tell us about the policies you worked on during your term."
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:92
+#: chat/templates/chat/chat_with.html:93
 #, python-format
 msgid ""
 "You are not talking to an actual human; it is an AI model trained with past "
