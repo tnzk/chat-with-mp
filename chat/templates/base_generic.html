@@ -6,7 +6,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -26,6 +25,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   {% block header %}
+    <title>
+      {% trans 'Chat with MP' %}
+    </title>
   {% endblock header %}
 </head>
 

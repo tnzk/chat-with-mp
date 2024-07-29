@@ -14,6 +14,8 @@ services:
 #      - ./packages/webapp/src:/app/src
 #      - ./packages/webapp/static:/app/static
 #      - ./packages/webapp/prisma:/app/prisma
+    profiles:
+      - standalone
   redis:
     image: redis:6.2-alpine
     restart: always

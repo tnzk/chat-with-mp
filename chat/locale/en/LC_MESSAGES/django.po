@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-13 01:00+0900\n"
+"POT-Creation-Date: 2024-07-29 16:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: chat/templates/base_generic.html:39
+#: chat/templates/base_generic.html:29 chat/templates/base_generic.html:41
 msgid "Chat with MP"
 msgstr ""
 
-#: chat/templates/base_generic.html:139
+#: chat/templates/base_generic.html:141
 msgid "About"
 msgstr ""
 
-#: chat/templates/chat/about.html:4
+#: chat/templates/chat/about.html:5 chat/templates/chat/about.html:12
 msgid "About this site"
 msgstr ""
 
-#: chat/templates/chat/about.html:8
+#: chat/templates/chat/about.html:16
 msgid ""
 "\n"
 "    <em>Chat with MP</em> is a hobby project exploring the potential of "
@@ -41,18 +41,18 @@ msgid ""
 "    publicly available open data. "
 msgstr ""
 
-#: chat/templates/chat/about.html:16
+#: chat/templates/chat/about.html:24
 msgid ""
 " While all features are free to use, some of the data\n"
 "    sources and APIs require fees. If you find this project interesting, we\n"
 "    welcome your support through Buy me a coffee. "
 msgstr ""
 
-#: chat/templates/chat/about.html:31
+#: chat/templates/chat/about.html:39
 msgid "Data sources"
 msgstr ""
 
-#: chat/templates/chat/about.html:34
+#: chat/templates/chat/about.html:42
 msgid ""
 "\n"
 "    <div class=\"my-3\">For Japanese National Diet:</div>\n"
@@ -106,21 +106,26 @@ msgid ""
 "    "
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:35
+#: chat/templates/chat/chat_with.html:5
+#, python-format
+msgid "Chat with %(mp_name)s MP (AI)"
+msgstr ""
+
+#: chat/templates/chat/chat_with.html:40
 #, python-format
 msgid "%(mp_name)s MP (AI) is ready! Ask anything to start conversation"
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:45
+#: chat/templates/chat/chat_with.html:50
 #, python-format
 msgid "%(mp_name)s is typing..."
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:69
+#: chat/templates/chat/chat_with.html:76
 msgid "E.g. Please tell us about the policies you worked on during your term."
 msgstr ""
 
-#: chat/templates/chat/chat_with.html:93
+#: chat/templates/chat/chat_with.html:100
 #, python-format
 msgid ""
 "You are not talking to an actual human; it is an AI model trained with past "

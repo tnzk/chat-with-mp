@@ -1,5 +1,10 @@
 {% extends "base_generic.html" %}
 {% load i18n %}
+{% block header %}
+    <title>
+      {% blocktrans %}Chat with {{ mp_name }} MP (AI){% endblocktrans %}
+    </title>
+  {% endblock header %}
 {% block content %}
 <script>
   function showMessageInTransit(event) {

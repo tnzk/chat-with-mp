@@ -16,10 +16,7 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 profile = {}
 
-redis_cli = redis.Redis(host=os.environ.get("REDIS_HOST"),
-            username="default",
-            ssl=False if os.environ.get("REDIS_NO_SSL") else True,
-            password=os.environ.get("REDIS_PASSWORD"))
+redis_cli = redis.from_url(os.environ.get("REDIS_URL"))
 
 def system_prompt(name, speech, jurisdiction):
     template = os.environ.get("PROMPT_GB" if jurisdiction == "GB" else "PROMPT_JP")
