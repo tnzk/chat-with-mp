@@ -69,17 +69,19 @@
       <label class="input input-bordered flex items-center px-0">
         <input
           type="text"
-          class="grow px-4"
+          class="grow px-2"
           id="new_message"
           name="new_message"
           autocomplete="off"
           placeholder="{% trans 'E.g. Please tell us about the policies you worked on during your term.' %}"
         />
-        <button class="block pr-4" type="submit" class="">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-            <path d="M3.105 2.288a.75.75 0 0 0-.826.95l1.414 4.926A1.5 1.5 0 0 0 5.135 9.25h6.115a.75.75 0 0 1 0 1.5H5.135a1.5 1.5 0 0 0-1.442 1.086l-1.414 4.926a.75.75 0 0 0 .826.95 28.897 28.897 0 0 0 15.293-7.155.75.75 0 0 0 0-1.114A28.897 28.897 0 0 0 3.105 2.288Z" />
-          </svg>          
-        </button>
+        <div class="pr-1">
+          <button class="text-white p-1.5 rounded-md bg-lime-600 hover:bg-lime-500" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+              <path d="M3.105 2.288a.75.75 0 0 0-.826.95l1.414 4.926A1.5 1.5 0 0 0 5.135 9.25h6.115a.75.75 0 0 1 0 1.5H5.135a1.5 1.5 0 0 0-1.442 1.086l-1.414 4.926a.75.75 0 0 0 .826.95 28.897 28.897 0 0 0 15.293-7.155.75.75 0 0 0 0-1.114A28.897 28.897 0 0 0 3.105 2.288Z" />
+            </svg>
+          </button>
+        </div>
       </label>
     </div>
   </form>

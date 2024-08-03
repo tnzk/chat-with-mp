@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 16:00+0000\n"
+"POT-Creation-Date: 2024-08-03 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "About this site"
 msgstr ""
 
-#: chat/templates/chat/about.html:16
+#: chat/templates/chat/about.html:16 chat/templates/chat/index.html:9
 msgid ""
 "\n"
 "    <em>Chat with MP</em> is a hobby project exploring the potential of "
@@ -134,14 +134,18 @@ msgid ""
 "its subsidiaries or its affiliates"
 msgstr ""
 
-#: chat/templates/chat/index.html:7
+#: chat/templates/chat/index.html:14
+msgid "Learn more"
+msgstr ""
+
+#: chat/templates/chat/index.html:17
 msgid "Recent MPs"
 msgstr ""
 
-#: chat/templates/chat/index.html:22
+#: chat/templates/chat/index.html:32
 msgid "Find MP"
 msgstr ""
 
-#: chat/templates/chat/index.html:29
+#: chat/templates/chat/index.html:39
 msgid "Type part of the name of MP..."
 msgstr ""

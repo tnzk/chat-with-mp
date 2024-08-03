@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 16:00+0000\n"
+"POT-Creation-Date: 2024-08-03 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "このサイトについて"
 msgid "About this site"
 msgstr "このサイトについて"
 
-#: chat/templates/chat/about.html:16
+#: chat/templates/chat/about.html:16 chat/templates/chat/index.html:9
 msgid ""
 "\n"
 "    <em>Chat with MP</em> is a hobby project exploring the potential of "
@@ -41,7 +41,8 @@ msgid ""
 "    publicly available open data. "
 msgstr ""
 "\n"
-"<em>ジェネリック国会議員AI</em>は、公開データとLLMを政治参加の意識向上に活用する\n"
+"<em>ジェネリック国会議員AI</em>は、公開データとLLMを政治参加の意識向上に活用"
+"する\n"
 "可能性を探るホビープロジェクトです。一般公開された国会議員のデータを使ってそ"
 "の国会議員を模した言動をするAIモデルを訓練し、国会議員との対話を擬似体験する"
 "ことができます。"
@@ -146,15 +147,19 @@ msgstr ""
 "れたAIモデルです。私たちは%(mp_name)s議員およびその関連団体等とは、一切の提"
 "携、協力、認可、支持、その他公式な関係はありません。"
 
-#: chat/templates/chat/index.html:7
+#: chat/templates/chat/index.html:14
+msgid "Learn more"
+msgstr "詳しく"
+
+#: chat/templates/chat/index.html:17
 msgid "Recent MPs"
 msgstr "最近の国会議員"
 
-#: chat/templates/chat/index.html:22
+#: chat/templates/chat/index.html:32
 msgid "Find MP"
 msgstr "国会議員を探す"
 
-#: chat/templates/chat/index.html:29
+#: chat/templates/chat/index.html:39
 msgid "Type part of the name of MP..."
 msgstr "国会議員の名前の一部で検索..."
 

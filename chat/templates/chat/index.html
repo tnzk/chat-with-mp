@@ -4,6 +4,16 @@
 
 {% block content %}
 <div class="mx-auto max-w-screen-lg px-4 py-1 sm:px-6 sm:py-2 lg:px-8">
+
+  <div class="mb-8">
+    {% blocktrans %}
+    <em>Chat with MP</em> is a hobby project exploring the potential of large
+    language models to raise political awareness. It allows people to engage
+    with virtual representations of members of parliament, created using
+    publicly available open data. {% endblocktrans %}
+    <a href="/about" class="text-sm text-lime-500 hover:text-lime-600">{% trans 'Learn more' %}</a>
+  </div>
+
   <h2 class="text-xl font-bold text-gray-900 sm:text-2xl py-2">{% trans 'Recent MPs' %}</h2>
   <div>
     {% for mp in recent %}
