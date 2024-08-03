@@ -20,7 +20,7 @@ msgstr ""
 
 #: chat/templates/base_generic.html:29 chat/templates/base_generic.html:41
 msgid "Chat with MP"
-msgstr "Chat国会議員AI"
+msgstr "ジェネリック国会議員AI"
 
 #: chat/templates/base_generic.html:141
 msgid "About"
@@ -41,7 +41,7 @@ msgid ""
 "    publicly available open data. "
 msgstr ""
 "\n"
-"<em>Chat国会議員AI</em>は、公開データとLLMを政治参加の意識向上に活用する\n"
+"<em>ジェネリック国会議員AI</em>は、公開データとLLMを政治参加の意識向上に活用する\n"
 "可能性を探るホビープロジェクトです。一般公開された国会議員のデータを使ってそ"
 "の国会議員を模した言動をするAIモデルを訓練し、国会議員との対話を擬似体験する"
 "ことができます。"
